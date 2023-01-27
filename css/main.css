@@ -3099,14 +3099,18 @@ p.big {
   .projects.big {
     padding-bottom: 50px;
   }
+  .projects__inner-title {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
   .projects__inner-title h4 {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 24px;
   }
   .projects__inner-title a {
     margin-left: 10px;
     letter-spacing: 0.3px;
-    padding: 0;
+    padding-top: 3px;
   }
   .projects__inner-title a span {
     margin-right: 5px;
@@ -3128,7 +3132,7 @@ p.big {
     line-height: 20px;
   }
   .projects__inner .slick-list {
-    padding: 20px 0;
+    padding: 10px 0;
   }
   .projects__inner .slick-arrow {
     width: 35px;

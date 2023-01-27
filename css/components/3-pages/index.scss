@@ -1147,14 +1147,15 @@
         }
         &__inner {
             &-title {
+                flex-wrap: wrap;
                 h4 {
-                    font-size: 20px;
+                    font-size: 18px;
                     line-height: 24px;
                 }
                 a {
                     margin-left: 10px;
                     letter-spacing: .3px;
-                    padding: 0;
+                    padding-top: 3px;
                     span {
                         margin-right: 5px;
                     }
@@ -1182,7 +1183,7 @@
             }
             .slick {
                 &-list {
-                    padding: 20px 0;
+                    padding: 10px 0;
                 }
                 &-arrow {
                     width: 35px;
