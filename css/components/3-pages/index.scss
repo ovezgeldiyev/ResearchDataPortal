@@ -471,7 +471,7 @@
         &-title {
             display: flex;
             align-items: center;
-            margin-bottom: 24px;
+            margin-bottom: 0px !important;
 
             a {
                 color: $primary;
@@ -500,10 +500,65 @@
             flex-wrap: wrap;
             margin: 0 -8px;
             position: relative;
+            &.slider {
+                margin: 0 -16px;
+            }
+        
             &.active {
                 display: flex;
             }
         }
+        .slick {
+            &-slide {
+                display: flex !important;
+                flex-direction: column;
+                height: unset !important;
+            }
+            &-list {
+                padding: 30px 0;
+            } 
+            &-track {
+                display: flex !important;
+                align-items: stretch !important;
+            }
+            &-slider {
+                &:hover {
+                    .slick-arrow {
+                        opacity: 1;
+                    }
+                }
+            }
+            &-arrow {
+                width: 60px;
+                height: 60px;
+                background-color: $primary;
+                border-radius: 50%;
+                z-index: 9;
+                opacity: 0;
+                transition: .2s ease;
+                &:hover {
+                    opacity: .8 !important;
+                    background-color: $primary !important;
+                    color: $white !important;
+                }
+                &:focus {
+                    background-color: $primary !important;
+                    color: $white !important;
+                }
+                &::before {
+                    font-size: 28px;
+                }
+            }
+            &-prev {
+                left: 0;
+                transform: translateX(-120%);
+            }
+            &-next {
+                right: 0;
+                transform: translateX(120%);
+            }
+        }
+
         &-list {
             padding-top: 45px;
             display: flex;
@@ -600,7 +655,7 @@
     &Card {
         width: calc(33.3% - 16px);
         margin: 8px;
-        box-shadow: 0px 0px 50px 0px #00000014;
+        box-shadow: 0px 0px 25px 0px #00000014;
         background-color: $white;
         border-radius: 5px;
         &__image {
@@ -717,6 +772,43 @@
         }
     }
 }
+// 1620px
+@mixin projects-xxxxlg-xxxxxlg {
+    .projects {
+        &__inner {
+            .slick {
+                &-list {
+                    padding: 30px 8px;
+                } 
+                &-slider {
+                    &:hover {
+                        .slick-arrow {
+                            opacity: 1;
+                        }
+                    }
+                }
+                &-arrow {
+                    width: 60px;
+                    height: 60px;
+                    background-color: $primary;
+                    border-radius: 50%;
+                    z-index: 9;
+                    opacity: 0;
+                    transition: .2s ease;
+                }
+                &-prev {
+                    left: 0;
+                    transform: translateX(-30%);
+                }
+                &-next {
+                    right: 0;
+                    transform: translateX(30%);
+                }
+            }
+        }
+    }
+    
+}
 // 1180px
 @mixin projects-xlg-xxlg {
     .projects {
@@ -724,8 +816,51 @@
             padding-bottom: 140px;
         }
         &__inner {
+            .slick {
+                &-slide {
+                    margin: 15px;
+                }
+                &-list {
+                    padding: 30px 8px;
+                } 
+                &-slider {
+                    &:hover {
+                        .slick-arrow {
+                            opacity: 1;
+                        }
+                    }
+                }
+                &-arrow {
+                    width: 50px;
+                    height: 50px;
+                    background-color: $primary;
+                    border-radius: 50%;
+                    z-index: 9;
+                    opacity: 0;
+                    transition: .2s ease;
+                    &::before {
+                        font-size: 25px;
+                    }
+                }
+                &-prev {
+                    left: 0;
+                    transform: translateX(-20%);
+                }
+                &-next {
+                    right: 0;
+                    transform: translateX(20%);
+                }
+           
+            }
             &-row {
                 margin: 0 -5px;
+                &.slider {
+                    .projectsCard {
+                        &__content {
+                            padding: 30px;
+                        }
+                    }
+                }
             }
             &-list {
                 padding-top: 20px;
@@ -805,8 +940,19 @@
             padding-bottom: 110px;
         }
         &__inner {
+            .slick {
+                &-slide {
+                    margin: 8px;
+                }
+            }
             &-row {
                 margin: 0 -12px;
+                &.slider {
+                    margin: 0 -16px;
+                    .projectsCard__content {
+                        padding: 22px;
+                    }
+                }
             }
             &-footer {
                 padding-top: 40px;
@@ -867,15 +1013,102 @@
         }
     }
 }
+// 750px
+@mixin projects-sm-md {
+    .projects {
+
+        &__inner {
+            &-row {
+                &.slider {
+                    margin: 0 -15px;
+                    .projectsCard {
+                        h5 {
+                            height: 60px;
+                        }
+                        p {
+                            height: 192px;
+                            font-size: 16px;
+                            line-height: 24px;
+                        }
+                    }
+                }
+            }
+            .slick {
+                &-slide {
+                    margin: 15px;
+                }
+                &-list {
+                    padding: 30px 8px;
+                } 
+                &-slider {
+                    &:hover {
+                        .slick-arrow {
+                            opacity: 1;
+                        }
+                    }
+                }
+                &-arrow {
+                    width: 50px;
+                    height: 50px;
+                    background-color: $primary;
+                    border-radius: 50%;
+                    z-index: 9;
+                    opacity: 0;
+                    transition: .2s ease;
+                    &::before {
+                        font-size: 25px;
+                    }
+                }
+                &-prev {
+                    left: 0;
+                    transform: translateX(0%);
+                }
+                &-next {
+                    right: 0;
+                    transform: translateX(0%);
+                }
+           
+            }
+        }
+
+    }
+}
 // 650px
 @mixin projects-sm-md-extra {
     .projects {
         &.big {
             padding-bottom: 60px;
+            .projectsCard {
+                h5 {
+                    height: unset;
+                    margin-bottom: 8px;
+                    line-height: 25px;
+                }
+                p {
+                    height: unset;
+                    margin-bottom: 16px;
+                }
+            }
         }
         &__inner {
             &-row {
                 margin: 0;
+                &.slider {
+                    .projectsCard {
+                        &__content {
+                            padding: 16px;
+
+                        }
+                
+                    }
+                }
+            }
+            .slick-arrow {
+                width: 40px;
+                height: 40px;
+                &::before {
+                    font-size: 20px;
+                }
             }
             & > button {
                 width: 34px;
@@ -899,15 +1132,7 @@
                     padding: 10px 12px;
                 }
             }
-            h5 {
-                height: unset;
-                margin-bottom: 8px;
-                line-height: 25px;
-            }
-            p {
-                height: unset;
-                margin-bottom: 16px;
-            }
+
             .button {
                 padding: 15px 40px;
             }
@@ -921,6 +1146,60 @@
             padding-bottom: 50px;
         }
         &__inner {
+            &-title {
+                h4 {
+                    font-size: 20px;
+                    line-height: 24px;
+                }
+                a {
+                    margin-left: 10px;
+                    letter-spacing: .3px;
+                    padding: 0;
+                    span {
+                        margin-right: 5px;
+                    }
+                }
+            }
+            &-row {
+                &.slider {
+                    margin: 0 -15px;
+                    .projectsCard {
+                        &__content {
+                            padding: 16px 20px;
+                        }
+                        h5 {
+                            height: 50px;
+                            line-height: 25px;
+                            margin-bottom: 8px;
+                        }
+                        p {
+                            height: 180px;
+                            font-size: 14px;
+                            line-height: 20px;
+                        }
+                    }
+                }
+            }
+            .slick {
+                &-list {
+                    padding: 20px 0;
+                }
+                &-arrow {
+                    width: 35px;
+                    height: 35px;
+                    &::before {
+                        font-size: 17px;
+                    }
+                }
+                &-prev {
+                    left: 0;
+                    transform: translateX(-5%);
+                }
+                &-next {
+                    right: 0;
+                    transform: translateX(5%);
+                }
+            }
             &-list {
                 min-width: 950px;
                 padding-top: 0;

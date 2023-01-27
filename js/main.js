@@ -30,6 +30,33 @@ window.onscroll = function () {
 };
 // scroll end
 
+$(function () {
+  $(".slider").slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: true,
+    dots: false,
+    speed: 600,
+    fade: false,
+    responsive: [
+      {
+        breakpoint: 1181,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 751,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  });
+});
 /*mobile slider */
 function mobileOnlySlider() {
   $(".intro__inner-row").slick({
